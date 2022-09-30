@@ -1,0 +1,123 @@
+body {
+    background-image: url("Img/contato.jpg");
+    background-color:ghostwhite;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+nav{
+    position: absolute;
+	top:  0;
+	right:  0;
+}
+
+ul{
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    align-items: center;
+    padding: 16px;
+    text-transform: uppercase;
+    font-weight: bolder;
+    background-color: aqua;
+    
+}
+
+li{
+    margin: 0 0 0 15px;
+}
+
+a{
+    color: rgba(7, 7, 0, 0.781);
+    text-decoration: none;
+}
+
+.top{
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    color: rgb(40, 224, 224);
+}
+
+.list{
+    padding: 120px 0 0 0;
+}
+
+header img{
+
+    width:500px;
+    height: 500px;
+    border-bottom-left-radius: 50%;
+    border: 5px solid  rgb(40, 224, 224);
+}
+
+
+h1{
+    font-size: 50px;
+}
+
+h2{
+    font-size: 30px;
+    padding: 10px 0 0 0;
+}
+
+h3{
+    font-size: 20px;
+    font-weight: bolder; 
+}
+
+.center{
+    text-align: end;
+}
+
+footer img{
+    width: 60px;
+    height: 60px;
+}
+
+footer{
+    display:flex;
+    justify-content: center;
+    background-color: rgb(42, 187, 132) ;
+    position:relative;
+	top:  100px;
+
+}
+footer a{
+    margin: 20px;
+    text-align: center;
+}
+
+footer a:hover{
+color: aqua;
+}
+
+footer p{
+   margin-top: 5px; 
+}
+
+.container{
+    padding: 0px 50px;
+}
+
+nav a:hover{
+    color:   rgb(26, 180, 26) ;
+ }
+
+.org{
+    text-align: center;
+    position:relative;
+	top:  40px;
+    color: rgb(42, 187, 132) ;	
+}
+
+.meio{
+    text-align: center;
+    position:relative;
+	top: 40px;
+    color: rgb(42, 187, 132) ;
+}
+
+main{
+    padding: 20px;
+    background-color: aqua;
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Francini Santos</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="script.js">
+    <script src="script.js" defer></script>
+    <canvas width="1600" height="400"></canvas>
+</head>
+
+<div class="fundo">
+<body>
+    <div class="org">
+        <h1>Contatos</h1>
+    </div>
+    <br>
+
+    <br>
+
+
+    <footer>
+        <a href="https://github.com/Franciniss" target="_blank" rel="noopener noreferrer">
+            <img src="https://i.ibb.co/L1WX1yc/github.png" alt="github">
+            <p>Github</p>
+        </a>
+        <a href="https://www.linkedin.com/in/francini-silva-840331239" target="_blank" rel="noopener noreferrer">
+            <img src="https://i.ibb.co/x8mX4mk/linkedin.png" alt="linkedin">
+            <p>Linkedin</p>
+        </a>
+        <a href="mailto:francini.s.santo@gmail.com" target="_blank" rel="noopener noreferrer">
+            <img src="https://i.ibb.co/swTHfZT/gmail.png" alt="gmail">
+            <p>Email</p>
+        </a>
+        <a href="https://t.me/Francini_Santos" target="_blank" rel="noopener noreferrer">
+            <img src="https://i.ibb.co/xHwS0vH/telegram.png" alt="telegram">
+            <p>Telegram</p>
+        </a>
+        <a href="https://discord.com/channels/@me" target="_blank" rel="noopener noreferrer">
+            <img src="https://i.ibb.co/LCJBSqN/discord.png" alt="discord">
+            <p>Discord</p>
+        </a>
+    </footer>
+
+</body>
+</div>
+<script>
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+
+    pincel.fillStyle = 'lightgray';
+    pincel.fillRect(0, 0, 1600, 400);
+
+    var raio = 10;
+    var xAleatorio;
+    var yAleatorio;
+
+    function desenhaCirculo(x, y, raio, cor) {
+
+        pincel.fillStyle = cor;
+        pincel.beginPath();
+        pincel.arc(x, y, raio, 0, 2 * Math.PI);
+        pincel.fill();
+
+    }
+
+    function limpaTela() {
+
+        pincel.clearRect(0, 0, 1600, 400);
+
+    }
+
+    function desenhaAlvo(x,y) {
+
+        desenhaCirculo(x, y, raio+20, 'red');
+        desenhaCirculo(x, y, raio+10, 'white');
+        desenhaCirculo(x, y, raio, 'red');
+
+    }
+
+    function sorteiaPosicao(maximo) {
+
+        return Math.floor(Math.random() * maximo);
+
+    }
+
+function atualizaTela() {
+    limpaTela();
+    xAleatorio = sorteiaPosicao(1600);
+    yAleatorio = sorteiaPosicao(400);
+    desenhaAlvo(xAleatorio, yAleatorio);
+}
+
+setInterval(atualizaTela, 1600);
+
+function dispara(evento) {
+
+    var x = evento.pageX - tela.offsetLeft;
+    var y = evento.pageY - tela.offsetTop;
+
+    if((x > xAleatorio - raio)
+    && (x < xAleatorio + raio)
+    && (y > yAleatorio - raio)
+    && (y < yAleatorio + raio)) {
+
+        alert('Acertou!');
+
+    }
+
+
+}
+
+tela.onclick = dispara;
+
+</script>
+</html>
